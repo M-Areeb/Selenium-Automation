@@ -37,6 +37,7 @@ public class FbRegistration
 			// code for entering mobile number 
 			element2.sendKeys("Mobile Number need to be specified here");
 			
+			// User must provide there correct information to get the desired result 
 		
 			
 			WebElement element3 = driver.findElement(By.id("u_0_w"));;
