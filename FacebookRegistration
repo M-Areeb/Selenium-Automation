@@ -35,13 +35,13 @@ public class FbRegistration
 			
 			WebElement element2 = driver.findElement(By.xpath("//input[@id='u_0_p']"));
 			// code for entering mobile number 
-			element2.sendKeys("**********");
+			element2.sendKeys("Mobile Number need to be specified here");
 			
-			// I have intentionally provide wrong phone number 
+		
 			
 			WebElement element3 = driver.findElement(By.id("u_0_w"));;
 			
-			element3.sendKeys("developer");
+			element3.sendKeys("Password need to be specified here ");
 			
 			Select oSelect = new Select(driver.findElement(By.id("day")));//it will select day from drop down
 
