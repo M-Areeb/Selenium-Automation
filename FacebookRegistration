@@ -1,0 +1,75 @@
+/* Facebook registration using selenium automation */
+package Facebook;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class FbRegistration
+
+{
+	public static void main(String args[])
+	{
+		System.out.println("THIS IS THE CODE FOR REGISTRATION ON FACEBOOK");
+		// These are the code for opening browser
+			System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\geckodriver\\geckodriver.exe");
+			WebDriver driver = new FirefoxDriver();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+			String url = "https://www.facebook.com/r.php";
+			driver.get(url);
+		 // Find element and enter the requirement code 
+			
+			WebElement element = driver.findElement(By.id("u_0_k"));
+			
+			element.sendKeys("Chris");
+		 
+			WebElement element1 = driver.findElement(By.id("u_0_m"));
+			// 
+			element1.sendKeys("John");
+			
+			
+			WebElement element2 = driver.findElement(By.xpath("//input[@id='u_0_p']"));
+			// code for entering mobile number 
+			element2.sendKeys("**********");
+			
+			// I have intentionally provide wrong phone number 
+			
+			WebElement element3 = driver.findElement(By.id("u_0_w"));;
+			
+			element3.sendKeys("developer");
+			
+			Select oSelect = new Select(driver.findElement(By.id("day")));//it will select day from drop down
+
+			oSelect.selectByValue("24");
+			
+			
+			Select oSelect1 = new Select(driver.findElement(By.id("month"))); // it will select month from drop down 
+
+			oSelect1.selectByValue("10");
+			
+			Select oSelect2 = new Select(driver.findElement(By.id("year"))); // it will select year from drop down 
+
+			oSelect2.selectByValue("2001");
+			
+			WebElement radioBtn = driver.findElement(By.id("u_0_7"));// code for radio button
+
+			radioBtn.click();
+
+			WebElement element4 = driver.findElement(By.id("u_0_12")); // code for signup button
+			
+			element4.click();
+			
+			
+		
+		
+	}
+
+
+
+}
+
