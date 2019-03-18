@@ -22,12 +22,13 @@ public class SuccessfulLogin
 		WebElement element = driver.findElement(By.id("email"));
 		element.sendKeys("Email id must be specified here");
 		
-		// i have intentionally written wrong  email otherwise it is successful with authentic email id 
+		
 		
 		WebElement element1 = driver.findElement(By.id("pass"));
 		element1.sendKeys("Password must be mentioned here");
 		
-		// i  have intentionally written wrong  password 
+		//User must mentioned there authentic information to get the desired result 
+		
 		
 		WebElement elementlast = driver.findElement(By.id("loginbutton"));
 		
