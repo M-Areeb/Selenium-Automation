@@ -1,0 +1,37 @@
+// A program for login on the facebook .
+package portfolioProject;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class SuccessfulLogin 
+{
+
+	public static void main(String args[])
+	{
+		System.out.println("Successfull Login ");
+		
+		System.setProperty("webdriver.gecko.driver", "D:\\Selenium\\geckodriver\\geckodriver.exe");
+		WebDriver driver = new FirefoxDriver();
+
+		String url = "https://en-gb.facebook.com/login/"; // url which need to be opened 
+		driver.get(url);
+		
+		WebElement element = driver.findElement(By.id("email"));
+		element.sendKeys("practise@yahoo.com ");
+		
+		// i have intentionally written wrong  email otherwise it is successful with authentic email id 
+		
+		WebElement element1 = driver.findElement(By.id("pass"));
+		element1.sendKeys("iamtypingwrongpassword");
+		
+		// i  have intentionally written wrong  password 
+		
+		WebElement elementlast = driver.findElement(By.id("loginbutton"));
+		
+		elementlast.click();
+		
+	}
+}
